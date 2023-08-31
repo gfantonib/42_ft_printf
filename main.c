@@ -31,7 +31,12 @@ int	main(void)
 	nbr = ft_nbr_init();
 	ft_change(&nbr);
 	
-	printf("a = %d\n", nbr.a);
-	printf("b = %d\n", nbr.b);
-	printf("c = %d\n", nbr.c);
+	printf("a = %d | ", nbr.a);
+	printf("%p\n", &nbr.a);
+	printf("b = %d | ", nbr.b);
+	printf("%p\n", &nbr.b);
+	printf("c = %d | ", nbr.c);
+	printf("%p\n", &nbr.c);
+	printf("%p | ", &nbr);
+	printf("%p\n", &nbr.a);
 }
