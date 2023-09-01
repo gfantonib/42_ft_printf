@@ -39,4 +39,5 @@ int	main(void)
 	printf("%p\n", &nbr.c);
 	printf("%p | ", &nbr);
 	printf("%p\n", &nbr.a);
+	printf("%ld\n", sizeof(t_nbr));
 }
