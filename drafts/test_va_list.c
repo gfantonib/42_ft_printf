@@ -19,7 +19,7 @@ void	print_integers(int count, ...)
     	printf("\n");
 }
 
-void	print_chars(int count, ...)
+void	print_chars(char *count, ...)
 {
 	va_list		args;
 	char		c;
@@ -27,7 +27,7 @@ void	print_chars(int count, ...)
 
 	va_start(args, count);
 	i = 0;
-	while (i < count)
+	while (i < 5)
 	{
 		c = va_arg(args, int);
 		printf("%c ", c);
@@ -35,11 +35,12 @@ void	print_chars(int count, ...)
 	}
 	va_end(args);
 	printf("\n");
+	printf("%s\n", count);
 }
 
 int	main() 
 {
 	print_integers(5, 10, 20, 30, 40);
-	print_chars(6, 'a', 'b', 'c', 'd');
+	print_chars("Hammingway", 'a', 'b', 'c', 'd');
     	return 0;
 }
