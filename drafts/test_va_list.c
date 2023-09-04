@@ -22,15 +22,15 @@ void	print_integers(int count, ...)
 void	print_chars(char *count, ...)
 {
 	va_list		args;
-	char		c;
+	char		*c;
 	int		i;
 
 	va_start(args, count);
 	i = 0;
 	while (i < 5)
 	{
-		c = va_arg(args, int);
-		printf("%c ", c);
+		c = va_arg(args, char*);
+		printf("%s ", c);
 		i++;
 	}
 	va_end(args);
@@ -41,6 +41,6 @@ void	print_chars(char *count, ...)
 int	main() 
 {
 	print_integers(5, 10, 20, 30, 40);
-	print_chars("Hammingway", 'a', 'b', 'c', 'd');
+	print_chars("Hammingway", "Mel", "Eve", "Adam", "Fletcher");
     	return 0;
 }
