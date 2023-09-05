@@ -1,10 +1,22 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/05 13:37:53 by gfantoni          #+#    #+#             */
+/*   Updated: 2023/09/05 13:39:05 by gfantoni         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	ft_case(va_list args, const char frmt)
 {
 	unsigned long	ptr;
 
-	if(frmt == 'c')
+	if (frmt == 'c')
 		return (ft_putchar(va_arg(args, int)));
 	else if (frmt == 's')
 		return (ft_putstr(va_arg(args, char *)));
@@ -18,7 +30,7 @@ int	ft_case(va_list args, const char frmt)
 	else if (frmt == 'd' || frmt == 'i')
 		return (ft_putnbr(va_arg(args, int)));
 	else if (frmt == 'u')
-	 	return (ft_putunbr_base(va_arg(args, unsigned int), "0123456789"));
+		return (ft_putunbr_base(va_arg(args, unsigned int), "0123456789"));
 	else if (frmt == 'x' || frmt == 'X')
 		return (ft_puthexa_u(va_arg(args, unsigned int), frmt));
 	else if (frmt == '%')
@@ -27,12 +39,11 @@ int	ft_case(va_list args, const char frmt)
 		return (-1);
 }
 
-
 int	ft_printf(const char *s, ...)
 {
 	va_list	args;
-	int	i;
-	int	length;
+	int		i;
+	int		length;
 
 	i = 0;
 	length = 0;

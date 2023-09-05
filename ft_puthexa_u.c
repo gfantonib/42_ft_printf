@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_puthexa_u.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/09/05 13:39:57 by gfantoni          #+#    #+#             */
+/*   Updated: 2023/09/05 13:40:18 by gfantoni         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "ft_printf.h"
 
 int	ft_puthexa_u(unsigned long long int n, char frmt)
 {
-	char	*base;
-	int	nbr_len;
+	char			*base;
+	int				nbr_len;
 	unsigned int	base_len;
 
 	nbr_len = 0;
