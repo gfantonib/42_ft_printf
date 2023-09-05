@@ -1,18 +1,18 @@
-#include "lib.h"
+#include "ft_printf.h"
 
-int	ft_puthexa_u(unsigned long long int n, char format)
+int	ft_puthexa_u(unsigned long long int n, char frmt)
 {
-	char			*base;
-	int				nbr_len;
+	char	*base;
+	int	nbr_len;
 	unsigned int	base_len;
 
 	nbr_len = 0;
-	if (format == 'p')
+	if (frmt == 'p')
 	{
 		write(1, "0x", 2);
 		nbr_len += 2;
 	}
-	if (format == 'X')
+	if (frmt == 'X')
 		base = "0123456789ABCDEF";
 	else
 		base = "0123456789abcdef";
@@ -27,4 +27,3 @@ int	ft_puthexa_u(unsigned long long int n, char format)
 	nbr_len += ft_unbrlen_base(n, base_len);
 	return (nbr_len);
 }
-
