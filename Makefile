@@ -2,10 +2,8 @@ NAME = libftprintf.a
 
 LIBFT_NAME = libft/libft.a
 LIBFT_PATH = libft
-
 CFLAGS = -Wall -Wextra -Werror -g
 IFLAGS = -Iinc -Ilibft/inc
-
 CC = gcc
 MK = mkdir -p
 
@@ -26,7 +24,7 @@ $(LIBFT_NAME):
 	make -C $(LIBFT_PATH)
 
 $(NAME): $(OBJECTS)
-	ar rcsT $(NAME) $(OBJECTS) $(LIBFT_NAME)
+	ar rcsT $(NAME) $(OBJECTS) $(LIBFT_NAME) $?
 	
 clean:
 	make clean -C $(LIBFT_PATH)
@@ -37,3 +35,5 @@ fclean: clean
 	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re

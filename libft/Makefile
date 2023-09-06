@@ -1,9 +1,7 @@
 NAME = libft.a
 
 CFLAGS = -Wall -Wextra -Werror -g
-
 IFLAGS = -Iinc
-
 MK = mkdir -p
 
 SOURCES = \
@@ -61,9 +59,7 @@ BONUS_SOURCES = \
 	src/ft_lstsize_bonus.c \
 
 OBJECTS_DIR = objs
-
 OBJECTS = $(addprefix $(OBJECTS_DIR)/, $(SOURCES:%.c=%.o))
-
 BONUS_OBJECTS = $(addprefix $(OBJECTS_DIR)/, $(BONUS_SOURCES:%.c=%.o))
 
 all: $(NAME)
@@ -76,7 +72,7 @@ $(NAME): $(OBJECTS)
 	ar rcs $(NAME) $?
 
 bonus:
-	@make OBJECTS="$(BONUS_OBJECTS)" --no-print-directory
+	make OBJECTS="$(BONUS_OBJECTS)"
 
 clean:
 	rm -rf $(OBJECTS_DIR)
