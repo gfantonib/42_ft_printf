@@ -1,25 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 13:40:39 by gfantoni          #+#    #+#             */
-/*   Updated: 2023/09/05 13:40:40 by gfantoni         ###   ########.fr       */
+/*   Created: 2023/07/26 10:32:18 by gfantoni          #+#    #+#             */
+/*   Updated: 2023/08/10 09:33:55 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putstr(const char *str)
+int	ft_strchr(const char *str, const char c)
 {
 	unsigned int	i;
 
-	if (!str)
-		return (write(1, "(null)", 6));
 	i = 0;
 	while (str[i])
+	{
+		if (str[i] == c)
+			return (1);
 		i++;
-	return (write (1, str, i));
+	}
+	if (str[i] == c)
+		return (1);
+	return (0);
 }

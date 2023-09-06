@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putunbr_base.c                                  :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 13:40:43 by gfantoni          #+#    #+#             */
-/*   Updated: 2023/09/05 13:40:53 by gfantoni         ###   ########.fr       */
+/*   Created: 2023/08/10 16:54:35 by gfantoni          #+#    #+#             */
+/*   Updated: 2023/08/10 17:34:13 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_putunbr_base(unsigned long long int n, const char *base)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	unsigned long long int	base_len;
-	int						nbr_len;
-
-	nbr_len = 0;
-	base_len = ft_strlen(base);
-	if (n >= base_len)
+	if (lst && del)
 	{
-		ft_putunbr_base(n / base_len, base);
-		ft_putunbr_base(n % base_len, base);
+		del(lst->content);
+		free(lst);
 	}
-	else
-		write(1, &base[n], 1);
-	nbr_len += ft_unbrlen_base(n, base_len);
-	return (nbr_len);
 }

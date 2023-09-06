@@ -1,29 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 13:41:06 by gfantoni          #+#    #+#             */
-/*   Updated: 2023/09/05 13:41:07 by gfantoni         ###   ########.fr       */
+/*   Created: 2023/08/10 16:09:17 by gfantoni          #+#    #+#             */
+/*   Updated: 2023/08/10 19:13:56 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-int	ft_strchr(const char *str, const char c)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	unsigned int	i;
+	t_list	*last_node;
 
-	i = 0;
-	while (str[i])
+	if (*lst == NULL)
 	{
-		if (str[i] == c)
-			return (1);
-		i++;
+		*lst = new;
+		return ;
 	}
-	if (str[i] == c)
-		return (1);
-	return (0);
+	last_node = ft_lstlast(*lst);
+	last_node->next = new;
 }

@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nbrlen_base.c                                   :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 13:36:47 by gfantoni          #+#    #+#             */
-/*   Updated: 2023/09/05 13:37:46 by gfantoni         ###   ########.fr       */
+/*   Created: 2023/08/02 10:14:03 by gfantoni          #+#    #+#             */
+/*   Updated: 2023/08/10 09:33:48 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-size_t	ft_nbrlen_base(long long int n, size_t base)
+void	ft_putstr_fd(char *s, int fd)
 {
-	size_t	i;
-
-	while (n >= (long long int)base)
+	if (!s || fd < 0)
+		return ;
+	while (*s != '\0')
 	{
-		n /= base;
-		i++;
+		ft_putchar_fd(*s, fd);
+		s++;
 	}
-	return (i);
 }

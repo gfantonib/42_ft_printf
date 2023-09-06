@@ -1,26 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_unbrlen_base.c                                  :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/05 13:41:31 by gfantoni          #+#    #+#             */
-/*   Updated: 2023/09/05 13:41:32 by gfantoni         ###   ########.fr       */
+/*   Created: 2023/07/22 08:40:32 by gfantoni          #+#    #+#             */
+/*   Updated: 2023/08/10 09:32:53 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "libft.h"
 
-size_t	ft_unbrlen_base(unsigned long long n, size_t base)
+int	ft_isascii(int c)
 {
-	size_t	i;
-
-	i = 1;
-	while (n >= (unsigned long long)base)
-	{
-		n /= base;
-		i++;
-	}
-	return (i);
+	if (c >= 0 && c <= 127)
+		return (1);
+	return (0);
 }
