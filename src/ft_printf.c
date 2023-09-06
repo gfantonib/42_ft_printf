@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../inc/ft_printf.h"
 
-int	ft_case(va_list args, const char frmt)
+static int	ft_case(va_list args, const char frmt)
 {
 	unsigned long	ptr;
 

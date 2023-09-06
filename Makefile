@@ -1,33 +1,39 @@
-NAME = libftprinf.a
+NAME = libftprintf.a
+
+LIBFT_NAME = libft/libft.a
+LIBFT_PATH = libft
 
 CFLAGS = -Wall -Wextra -Werror -g
+IFLAGS = -Iinc -Ilibft/inc
+
+CC = gcc
+MK = mkdir -p
 
 SOURCES = \
-	ft_printf.c \
-	ft_nbrlen_base.c \
-	ft_putchar.c \
-	ft_puthexa_u.c \
-	ft_putnbr.c \
-	ft_putstr.c \
-	ft_putunbr_base.c \
-	ft_strchr.c \
-	ft_strlen.c \
-	ft_unbrlen_base.c
-	
-OBJECTS = $(SOURCES:%.c=%.o)
+	src/ft_printf.c
 
-all: $(NAME)
+OBJECTS_DIR = objs
+OBJECTS = $(addprefix $(OBJECTS_DIR)/, $(SOURCES:%.c=%.o))
 
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+all: $(LIBFT_NAME) $(NAME)
+
+
+$(OBJECTS_DIR)/%.o: %.c
+	$(MK) $(@D)
+	$(CC) $(CFLAGS) $(IFLAGS) -c $< -o $@
+
+$(LIBFT_NAME):
+	make -C $(LIBFT_PATH)
 
 $(NAME): $(OBJECTS)
-	ar rcs $(NAME) $? 
+	ar rcsT $(NAME) $(OBJECTS) $(LIBFT_NAME)
 	
 clean:
-	rm -f $(OBJECTS)
+	make clean -C $(LIBFT_PATH)
+	rm -rf $(OBJECTS_DIR)
 
 fclean: clean
+	make fclean -C $(LIBFT_PATH)
 	rm -f $(NAME)
 
 re: fclean all

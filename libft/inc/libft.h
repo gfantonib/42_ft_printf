@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/22 13:02:21 by gfantoni          #+#    #+#             */
-/*   Updated: 2023/08/10 18:47:58 by gfantoni         ###   ########.fr       */
+/*   Updated: 2023/09/06 11:57:47 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include <limits.h>
 
 typedef struct s_list
 {
@@ -59,14 +60,14 @@ void		ft_putendl_fd(char *s, int fd);
 void		ft_putnbr_fd(int n, int fd);
 
 // FT_PRINTF
-size_t	ft_nbrlen_base(long long int n, size_t base);
-int	ft_puthexa_u(unsigned long long int n, char frmt);
-int	ft_putunbr_base(unsigned long long int n, const char *base);
-size_t	ft_unbrlen_base(unsigned long long n, size_t base);
-int	ft_putchar(const char c);
-int	ft_putnbr(long long int n);
-int	ft_putstr(const char *str);
-int	ft_strchr(const char *str, const char c);
+size_t		ft_nbrlen_base(long long int n, size_t base);
+int			ft_puthexa_u(unsigned long long int n, char frmt);
+int			ft_putunbr_base(unsigned long long int n, const char *base);
+size_t		ft_unbrlen_base(unsigned long long n, size_t base);
+int			ft_putchar(const char c);
+int			ft_putnbr(long long int n);
+int			ft_putstr(const char *str);
+int			ft_strchr(const char *str, const char c);
 size_t		ft_strlen(const char *str);
 
 // BONUS
