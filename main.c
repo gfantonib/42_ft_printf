@@ -1,6 +1,7 @@
 #include "inc/ft_printf.h"
 #include <stdio.h>
 
+
 int	main(void)
 {
 	char	*str = "F. Scott Fitzgerald";
