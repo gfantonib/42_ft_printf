@@ -6,7 +6,7 @@
 /*   By: gfantoni <gfantoni@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/05 13:37:53 by gfantoni          #+#    #+#             */
-/*   Updated: 2023/09/05 13:39:05 by gfantoni         ###   ########.fr       */
+/*   Updated: 2023/09/18 15:54:07 by gfantoni         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ int	ft_printf(const char *s, ...)
 	int		i;
 	int		length;
 
+	if (s == 0)
+		return (-1);
 	i = 0;
 	length = 0;
 	va_start(args, s);
